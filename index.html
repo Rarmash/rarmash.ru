@@ -3,13 +3,57 @@
 <head>
     <meta charset="UTF-8">
     <title>Rarmash</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
 </head>
 
 <style>
     body {
-        background-color: #000000;
-        background-size: 100% 100%;
-        font-family: lucida console,system-ui;
+        margin: 0;
+        padding: 0;
+        font-family: lucida console, system-ui;
+    }
+
+    .bg-video-container {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        z-index: -1;
+    }
+
+    .bg-video-container::before {
+        content: '';
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background: rgba(0, 0, 0, 0.5); /* 50% opacity black overlay */
+        z-index: 1;
+    }
+
+    .bg-video {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        z-index: -1;
+    }
+
+    .bg-video::after {
+        content: "";
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background-color: black;
+        opacity: 0.5;
+        z-index: 1;
+        pointer-events: none;
     }
 
     .hero {
@@ -18,7 +62,14 @@
         color: black;
         font-size: 40px;
         text-align: center;
-        background-color: forestgreen;
+        background-color: #3E3E3E;
+    }
+
+    .logo {
+        width: 40px;
+        height: 40px;
+        margin-right: 10px;
+        vertical-align: middle;
     }
 
     .url-container {
@@ -27,56 +78,90 @@
         align-items: center;
         text-align: center;
         text-decoration: none;
-        font-size: 40px;
-        line-height: 70px;
+        font-size: 25px;
+        line-height: 40px;
     }
 
     a {
         text-decoration: none;
-        color: forestgreen;
+        color: #107C10;
     }
 </style>
 
 <body>
+    <div class="bg-video-container">
+        <video class="bg-video" autoplay loop muted playsinline>
+            <source src="https://cdn.cloudflare.steamstatic.com/steamcommunity/public/images/items/588650/abba03a95fe7d3d6494559491b7d0f4575eb7bca.mp4" type="video/mp4">
+            Your browser does not support the video tag.
+        </video>
+    </div>
     <div class="bg">
         <h1 class="hero">
-            <span><i>Rarmash</i></span>
+            <img src="favicon.ico" alt="Rarmash Logo" class="logo">
+            <span><b>Rarmash</b></span>
         </h1>
         <div class="url-container">
             <p class="list-entry">
                 <span class="list-pointer">&gt;</span>
+                <i class="fas fa-gamepad"></i>
+                <span>Games backlog (RU):
+                  <a href="https://rarmash.notion.site/ee6e4b78e3114df1beb38c269d064e49" aria-label="Notion" target="_blank">Notion/Rarmash</a>
+                </span>
+            </p>
+            <p class="list-entry">
+                <span class="list-pointer">&gt;</span>
+                <i class="fab fa-telegram"></i>
                 <span>Telegram:
                   <a href="https://telegram.me/r4rm4sh" aria-label="Telegram" target="_blank">@r4rm4sh</a>
                 </span>
             </p>
             <p class="list-entry">
                 <span class="list-pointer">&gt;</span>
+                <i class="fab fa-steam"></i>
                 <span>Steam:
                   <a href="https://steamcommunity.com/profiles/76561198886468368" aria-label="Steam" target="_blank">id/rarmash</a>
                 </span>
             </p>
             <p class="list-entry">
                 <span class="list-pointer">&gt;</span>
+                <i class="fab fa-xbox"></i>
+                <span>Xbox:
+                  <a href="https://www.xbox.com/play/user/r4rm4sh" aria-label="Xbox" target="_blank">r4rm4sh</a>
+                </span>
+            </p>
+            <p class="list-entry">
+                <span class="list-pointer">&gt;</span>
+                <i class="fab fa-twitch"></i>
                 <span>Twitch:
                   <a href="https://twitch.tv/rarmash" aria-label="Twitch" target="_blank">@rarmash</a>
                 </span>
             </p>
             <p class="list-entry">
                 <span class="list-pointer">&gt;</span>
+                <i class="fab fa-github"></i>
                 <span>Github:
                   <a href="https://github.com/rarmash" aria-label="Github" target="_blank">@rarmash</a>
                 </span>
             </p>
             <p class="list-entry">
                 <span class="list-pointer">&gt;</span>
+                <i class="fab fa-twitter"></i>
                 <span>X (Twitter):
                   <a href="https://twitter.com/r4rm4sh" aria-label="X (Twitter)" target="_blank">@r4rm4sh</a>
                 </span>
             </p>
             <p class="list-entry">
                 <span class="list-pointer">&gt;</span>
+                <i class="fab fa-youtube"></i>
                 <span>YouTube:
                   <a href="https://www.youtube.com/channel/UCwUSkAU_XpeLqlTSZxa7UZA" aria-label="YouTube" target="_blank">@Rarmash</a>
+                </span>
+            </p>
+            <p class="list-entry">
+                <span class="list-pointer">&gt;</span>
+                <i class="fas fa-clock"></i>
+                <span>Cubingtime:
+                  <a href="https://cubingtime.com/users/id14170" aria-label="Cubingtime" target="_blank">id14170</a>
                 </span>
             </p>
         </div>
